@@ -12,13 +12,21 @@ This project uses an ETL to get data from multiple data sources and creates a My
 
 * MongoDB Atlas
 * MySQL/MySQL Workbench
-* Python and Jupyter Notebook Support
+* Python with Jupyter Notebook Support
+
+#### Libraries
+
+* pandas
+* pymongo
+* certifi
+* sqlalchemy
 
 ## Steps to Reproduce
 
 1. Using the provided world.sql file, create a world database in MySQL by running the world.sql file. For more instructions please see here: https://dev.mysql.com/doc/world-setup/en/
 2. Download the provided continents2.csv file (place it in a data directory)
-3. Set up a MongoDB atlas cluster and load in the sample databases. For more instructions please see here: https://www.mongodb.com/docs/atlas/sample-data/#std-label-load-sample-data. This project will use the `sample_supplies` collection
+3. Set up a MongoDB atlas cluster and load in the sample databases. For more instructions please see here: https://www.mongodb.com/docs/atlas/sample-data/#std-label-load-sample-data. This project will use the `sample_supplies` collection. If you are creating a new cluster you should have an option to `load sample databases` during the cluster creation menu. Otherwise, you can click on the  `...` in the cluster menu to load the sample databases.
 4. Run the provided jupyter notebook and edit the mongoDB and MySQL auth values to the values of your cluster/database
 5. Create a new db schema in MySQL workbench to store the fact_sales and other dim tables, I called mine mock_company but be sure to rename it in the code to whatever you called your new database
+6. Verify that the new fact_sales table is working - the SQL scripts in the bottom of the file will give an appropriate output if the database is working as intended
 
